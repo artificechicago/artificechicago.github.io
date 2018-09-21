@@ -1,0 +1,87 @@
+---
+title: Classes
+heading: View more about each of our locations
+description: 
+classes_table:
+  - name: Ray Elementary, Hyde Park
+    color: "#8e8e8e"
+    features:
+      - text: Beginners Wednesday 4-5
+        highlight: false
+      - text: Advanced Thursday 4-5
+        highlight: false
+    call_to_action:
+      link: 
+      text: Enroll in Class
+  - name: Woodlawn Center
+    color: "#4a4a4a"
+    features:
+      - text: Open Tuesdays and Thursdays 3-5
+        highlight: false
+      - text: open for all ages - kids under 10 must be accompanied
+        highlight: true
+    call_to_action:
+      link: http://blog.artificechicago.org/p/favorites.html
+      text: See what we've been working on
+  - name: Hyde Park Neighborhood Club
+    color: "#a4a4a4"
+    features:
+      - text: Available to HPNC students
+        highlight: false
+      - text: Postponed for Fall 2018
+        highlight: true
+    call_to_action:
+      link: http://hpnclub.org/index.php/about/contact-us/
+      text: Contact HPNC to learn more
+  - name: Bret Harte Elementary, Hyde Park
+    color: "#1b1b1b"
+    features:
+      - text: "Thursday 3:30-6"
+        highlight: false
+    call_to_action:
+      link: 
+      text: Enroll in Class
+faq:
+  - question: How do I know if I'm signed up for a class?
+    answer: If you have completed the form and made your payment, you are signed up.  Sometimes schools don't update their class rosters frequently.  
+  - question: A class has already started for this quarter.  Can I still join?
+    answer: Possible, you can join up to a few weeks after the start if you are willing to put in the effort to catch up.
+  - question: What kinds of things do you teach?
+    answer: We teach a variety of tech skills.  Check out our <a href="{{site.url}}{{site.baseurl}}/contact/">course material</a> for more information.  
+  - question: Can you offer classes at my organization?
+    answer: Possibly, we are always looking for partner organizations if we have volunteer bandwidth.  Feel free to <a href="{{site.url}}{{site.baseurl}}/contact/">contact us</a> with opportunities.
+  - question: Any other questions?
+    answer: Contact us for any further questions <a href="/contact/">info@artificechicago.com</a>.
+---
+
+<p style="text-align:center;font-size:1.2em">Check out our <a href="http://blog.artificechicago.org/p/events-calendar.html">Events Calendar</a> for more events.</p>
+
+<div class="plans">
+	{% for plan in page.classes_table %}
+		<ul class="plan">
+			<li style="background: {{ plan.color }}">
+				<h3>{{ plan.name }}</h3>
+			</li>
+			{% for feature in plan.features %}
+				<li {% if feature.highlight %} class="highlighted"{% endif %}>{{ feature.text }}</li>
+			{% endfor %}
+
+			{% if plan.call_to_action %}
+				<li class="classes-cta"><div class="button"><a style="background: {{ plan.color }}" href="{{ plan.call_to_action.link }}">{{ plan.call_to_action.text }} &rarr;</a></div></li>
+			{% endif %}
+		</ul>
+	{% endfor %}
+</div>
+
+
+{% if page.faq %}
+	<h2>Classes FAQ</h2>
+	<dl class="faq">
+		{% for item in page.faq %}
+			<div>
+				<dt>{{ item.question }}</dt>
+				<dd>{{ item.answer }}</dd>
+			</div>
+		{% endfor %}
+	</dl>
+{% endif %}
