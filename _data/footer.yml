@@ -1,0 +1,26 @@
+- links:
+  - name: Classes
+    link: /classes/
+  - name: Blog
+    link: http://blog.artificechicago.org
+  - name: About
+    link: /about/
+  - name: Contact
+    link: /contact/
+- links:
+  - name: Facebook
+    link: https://www.facebook.com/ArtificeChicago/
+    new_window: true
+    social_icon: Facebook
+  - name: Twitter
+    link: https://twitter.com/artificechicago
+    social_icon: Twitter
+    new_window: true
+  - name: Instagram
+    link: https://www.instagram.com/artificechicago
+    social_icon: Instagram
+    new_window: true
+  # - name: YouTube
+  #   link: https://youtube.com
+  #   social_icon: YouTube
+  #   new_window: true

@@ -1,0 +1,20 @@
+- name: About
+  link: /about/
+  new_window: false
+  highlight: false
+- name: Contact
+  link: /contact/
+  new_window: false
+  highlight: false
+- name: Blog
+  link: http://blog.artificechicago.org
+  new_window: true
+  highlight: false
+- name: Enroll in a Class
+  link: /classes/
+  new_window: false
+  highlight: true
+- name: Volunteer
+  link: /contact/?message=Hi+I%27m+interested+in+volunteering.++Can+you+send+me+some+more+information%3F++Thanks
+  new_window: false
+  highlight: true
