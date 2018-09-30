@@ -11,8 +11,7 @@ classes_table:
       - text: Advanced Thursday 4-5
         highlight: false
     call_to_action:
-      form: True
-      link: CT3BNANEBYKG4
+      link: /enroll/
       text: Enroll in Class
   - name: Woodlawn Center
     color: "#4a4a4a"
@@ -68,21 +67,8 @@ faq:
 			{% endfor %}
 
 			{% if plan.call_to_action %}
-        {% if plan.call_to_action.form %}
-          <li class="classes-cta">
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="{{ plan.call_to_action.link }}">
-              <table>
-                <tr><td><input type="hidden" name="on0" value="Name of student"></td></tr><tr><td><input type="hidden" name="os0" maxlength="200"></td></tr>
-              </table>
-              <input type="submit" value="{{ plan.call_to_action.text }}" name="submit" title="PayPal - The safer, easier way to pay online!" class="button" style="background: {{ plan.color }}">
-            </form>
-          </li>
-        {% else %}
-				  <li class="classes-cta"><div class="button"><a style="background: {{ plan.color }}" href="{{ plan.call_to_action.link }}">{{ plan.call_to_action.text }} &rarr;</a></div></li>
-        {% endif %}
-			{% endif %}
+        <li class="classes-cta"><div class="button"><a style="background: {{ plan.color }}" href="{{ plan.call_to_action.link }}">{{ plan.call_to_action.text }} &rarr;</a></div></li>
+      {% endif %}
 		</ul>
 	{% endfor %}
 </div>

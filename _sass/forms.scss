@@ -8,6 +8,19 @@
 	transition: .2s ease-in-out;
 }
 
+.special_button {
+	color: #fff;
+	text-decoration: none;
+	text-align:center;
+	padding: 10px 30px;
+	background: rgba(120,120,120,.5);
+	border-radius: 3px;
+	border: 1px solid rgba(255,255,255,.5);
+	transition: .2s ease-in-out;
+	margin: 0 30px;
+	cursor:pointer;
+}
+
 .button a:hover, input[type=submit]:hover {
 	border: 1px solid #fff;
 	background: $secondary-brand-color;
