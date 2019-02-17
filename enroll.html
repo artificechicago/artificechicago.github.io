@@ -1,0 +1,101 @@
+---
+title: Course Enrollment
+description: Please fill out this form to enroll your child in a class.
+---
+
+<script type="text/javascript">var submitted=false;</script>
+ <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='{{site.url}}{{site.baseurl}}/enroll-success/';}"></iframe>
+
+<div class="contact-box">
+
+  <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLScMexV1teb2xaWqbh9xwwHrIm3zlyHd8PFgV2veFb09M1VL_A/formResponse" target="hidden_iframe" onsubmit="submitted=true;" class="contact-form">
+    <input type="hidden" name="_to" value="info@artificechicago.org" />
+    <input type="text" name="_gotcha" style="display: none;">
+
+    <label for="name">Parent Name</label>
+    <input type="text" name="entry.852720456" id="name" placeholder="Enter your name..." required />
+
+    <label for="email">Email Address</label>
+    <input type="email" name="entry.1373297091" id="email" placeholder="Enter your email..." required />    
+
+    <label for="phone">Phone Number</label>
+    <input type="phone" name="entry.238732337" id="phone" placeholder="Enter your phone number..." required />
+
+    <label for="name">Student Name</label>
+    <input type="text" name="entry.1327065882" id="name" placeholder="Enter student name..." required />
+
+    <label for="course">Select Class</label>
+    <select name="entry.21653650" id="course">
+      <option name="entry.21653650" value="Ray Elementary: Beginner">Ray Elementary: Beginner </option>
+      <option name="entry.21653650" value="Ray Elementary: Advanced">Ray Elementary: Advanced </option>
+      <option name="entry.21653650" value="Bret Harte Elementary">Bret Harte Elementary </option>
+      <option name="entry.21653650" value="Hyde Park Neighborhood Club">Hyde Park Neighborhood Club </option>
+    </select>
+    <div>
+     <label for="media_release" style="font-size:0.7em;display:inline-block;"><input type="checkbox" name="entry.1373764636" value="Yes, I agree" id="media_release" style="display:inline; width:20px" checked/>
+     I grant permission for my child's image to be used in newsletters, websites and other media. (<a href="https://docs.google.com/document/d/e/2PACX-1vSSQ9BpQgxC9cBQDhIcYDdmAz1JmKUS4koXzgRPUW4iQPw3gfEtU9oG1HtwnAyUb3JS_irAIeFIzq-x/pub" target="_blank">More Information</a>) </label>
+    </div>
+    <input type="hidden" name="entry.1482540669" id="paypal_opened"/>
+    <input type="hidden" name="entry.2128531668" id="secret_google"/>
+
+
+    <input type="submit" id="submit-form" style="display:none;" value="Enroll In Course" />
+  </form>
+
+
+<div class="contact-details">
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="contact-form" onsubmit="submitPay()">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="CT3BNANEBYKG4">
+
+<input type="hidden" name="on0" value="transaction_secret">
+<input type="hidden" name="os0" value="blank_secret" id="secret_paypal">
+
+<input type="hidden" name="on1" value="student_name">
+<input type="hidden" name="os1" value="blank_name" id="name_paypal">
+
+<input type="hidden" name="return" value="http://www.artificechicago.org/enroll/" id="paypal_return">
+
+<input type="submit" value="Pay for Class Now*" name="submitBoth" title="PayPal - The safer, easier way to pay online!" class="button" id="paypal_button">
+    </form>
+    <p>*You will be taken to a paypal page and you should return here to complete form when finished.</p>
+<label id="enroll_button" class="special_button" for="submit-form" tabindex="0">Enroll In Course</label>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+function submitPay() {
+    $( "#name_paypal" ).val( $( "#name" ).val() );
+    $( "#paypal_return" ).val( "http://www.artificechicago.org/enroll/?transaction=" + $( "#secret_paypal" ).val() );
+    $( "#paypal_opened" ).val( 'Yes' );
+    $( "#enroll_button").css('background-color','#4182e4');
+    $( "#paypal_button").css('background-color','rgba(120,120,120,.5)');
+}
+
+var str = getParameterByName('transaction');
+if (str != null){
+  $( "#secret_paypal" ).val( str );
+  $( "#secret_google" ).val( str );
+  $( "#paypal_opened" ).val( 'Yes' );
+  $( "#enroll_button").css('background-color','#4182e4');
+  $( "#paypal_button").css('background-color','rgba(120,120,120,.5)');
+} else{
+  str = Math.random().toString(36).substr(2, 5)
+  $( "#secret_paypal" ).val( str );
+  $( "#secret_google" ).val( str );
+}
+
+</script>
