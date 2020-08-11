@@ -21,7 +21,7 @@ GEM
       i18n (~> 0.7)
       jekyll-sass-converter (~> 1.0)
       jekyll-watch (~> 2.0)
-      kramdown (~> 1.14)
+      kramdown (~> 2.3)
       liquid (~> 4.0)
       mercenary (~> 0.3.3)
       pathutil (~> 0.9)
@@ -40,7 +40,9 @@ GEM
       jekyll (~> 3.3)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    kramdown (1.17.0)
+    kramdown (2.3.0)
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     liquid (4.0.3)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -70,6 +72,7 @@ DEPENDENCIES
   jekyll-paginate (= 1.1.0)
   jekyll-seo-tag (= 2.4.0)
   jekyll-sitemap (= 1.2.0)
+  kramdown-parser-gfm (~> 1.1)
 
 BUNDLED WITH
    1.16.4
